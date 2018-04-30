@@ -22,31 +22,29 @@ var genRandomColor = function(numChars) {
 var randomizeColor = function() {
     setTimeout(function() {
     document.getElementById("textDisplay").style.color = genRandomColor(6); // we always want six to get a valid hex color
-    randomizeColor();
-    }, 100); // always change colors every 100 millis
+    randomizeColor(); // always be changin' colors...
+    }, 100); // ...every 100 millis!
 };
 
 // this is how we chunk up inputText and display it seemingly one character at a time
 var i = 0;
-var maxValue = inputText.length;
-// we don't use a for loop, because javascript is dumb
+// we don't (can't!) use a for loop, because javascript is dumb
 // okay, not dumb, but asynchronous
 var printerFunction = function() {
-    if (i < inputText.length) {
+    if (i < inputText.length) { // this makes it so Mel speaks complete thoughts
+        var maxValue = inputText.length;
         displayText = displayText.concat(inputText[i]);
         i++;
         document.getElementById("textDisplay").textContent = displayText;
         setTimeout(function() {
-            // keep on going until you finish "saying" what you "want" to say!
-            printerFunction();
+            printerFunction(); // keep on going until you finish "saying" what you "want" to say!
         }, 100); // how long to wait in millis between characters
     }
-    else {
+    else { // else we start all over again
         setTimeout(function() {
-        i = 0;
+        i = 0; // gotta reset our variable to 0
         displayText = "";
-        // never shut up, even when you've already finished "speaking"!
-        printerFunction();
+        printerFunction(); // never shut up, even when you've already finished "speaking"!
         }, 5000); // how long to wait in millis before starting all over again
     };
 };
