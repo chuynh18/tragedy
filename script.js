@@ -41,7 +41,7 @@ var printerFunction = function() {
             printerFunction();
         }, 100); // how long to wait in millis between characters
     }
-    else if (i === inputText.length) {
+    else {
         setTimeout(function() {
         i = 0;
         displayText = "";
