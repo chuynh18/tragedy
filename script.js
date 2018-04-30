@@ -12,7 +12,7 @@ var displayText = "";
 var genRandomColor = function(numChars) {
     var colorArray = ["0","1","2","3","4","5","6","7","8","9","a","b","c","d","e","f"];
     var randomColor = "#";
-    for (i = 0; i < numChars; i++) {
+    for (var i = 0; i < numChars; i++) {
         randomColor += colorArray[Math.floor(Math.random()*colorArray.length)];
     }
     return randomColor;
@@ -28,24 +28,19 @@ var randomizeColor = function() {
 
 // this is how we chunk up inputText and display it seemingly one character at a time
 var i = 0;
-var j = 0;
 var maxValue = inputText.length;
 var printerFunction = function() {
-    if (i < inputText.length-1) {
-        if (j < inputText.length) {
-            displayText = displayText.concat(inputText[j]);
-            j++;
-        }
+    if (i < inputText.length) {
+        displayText = displayText.concat(inputText[i]);
+        i++;
+        document.getElementById("textDisplay").textContent = displayText;
         setTimeout(function() {
-            document.getElementById("textDisplay").textContent = displayText;
             printerFunction();
-            i++;
         }, 100);
     }
-    else if (i = inputText.length) {
+    else if (i === inputText.length) {
         setTimeout(function() {
         i = 0;
-        j = 0;
         displayText = "";
         printerFunction();
         }, 5000);
