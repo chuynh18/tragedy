@@ -1,11 +1,9 @@
 "use strict";
 
-// this will be the user's input - placeholder for now
-var inputText = "Don't forget to sign in to BootCamp Spot!";
-// this is where the user's input will be broken into an array
-var inputTextToArray = [];
+// this will be the user's input
+var inputText; // only need to declare it, not assign it any value.  It'll be assigned a value later by a prompt
 // this is what will be pushed to the screen
-var displayText = "";
+var displayText = ""; // defined as an empty string because we add to displayText later.  If we only declared displayText, we'd get an error
 
 // this generates a random string beginning with "#", followed by numChars number of hex digits (that is, 0 through f)
 // we'll use it in randomizeColor()
@@ -27,9 +25,9 @@ var randomizeColor = function() {
 };
 
 // this is how we chunk up inputText and display it seemingly one character at a time
-var i = 0;
 // we don't (can't!) use a for loop, because javascript is dumb
 // okay, not dumb, but asynchronous
+var i = 0;
 var printerFunction = function() {
     if (i < inputText.length) { // this makes it so Mel speaks complete thoughts
         var maxValue = inputText.length;
