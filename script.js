@@ -29,14 +29,12 @@ var j = 0;
 var maxValue = inputText.length;
 
 var printerFunction = function() {
-    randomizeColor();
     if (i < inputText.length-1) {
         if (j < inputText.length) {
             displayText = displayText.concat(inputText[j]);
             j++;
         }
         setTimeout(function() {
-            // randomizeColor();
             document.getElementById("textDisplay").textContent = displayText;
             printerFunction();
             i++;
@@ -53,6 +51,5 @@ var printerFunction = function() {
 };
 
 inputText = prompt("What does Mel say?", "Don't forget to sign in to BootCamp Spot!");
+randomizeColor();
 printerFunction();
-
-// sorry, Mel
