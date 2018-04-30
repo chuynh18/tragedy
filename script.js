@@ -52,4 +52,5 @@ var printerFunction = function() {
     };
 };
 
+inputText = prompt("What does Mel say?", "Don't forget to sign in to BootCamp Spot!");
 printerFunction();
