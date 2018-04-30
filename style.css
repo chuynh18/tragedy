@@ -1,0 +1,21 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    font-size: 56pt;
+}
+
+#mel {
+    text-shadow: 2px 2px red;
+}
+
+img {
+    border: solid;
+    border-radius: 5%;
+    border-width: 3px;
+    border-color: blue;
+    margin: 10px auto 0;
+}
+
+#textDisplay {
+    text-shadow: 2px 2px black;
+}
