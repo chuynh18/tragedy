@@ -28,6 +28,12 @@ var grabURL = function() {
         while (spliced.indexOf("%27") !== -1) {
             spliced = spliced.replace("%27", "'");
         };
+        while (spliced.indexOf("%2C") !== -1) {
+            spliced = spliced.replace("%2C", ",");
+        };
+        while (spliced.indexOf("%3A") !== -1) {
+            spliced = spliced.replace("%3A", ":");
+        };
         while (spliced.indexOf("%3C") !== -1) {
             spliced = spliced.replace("%3C", "<");
         };
@@ -36,6 +42,9 @@ var grabURL = function() {
         };
         while (spliced.indexOf("%60") !== -1) {
             spliced = spliced.replace("%60", "`");
+        };
+        while (spliced.indexOf("+") !== -1) {
+            spliced = spliced.replace("+", " ");
         };
         inputText = spliced;
     }
