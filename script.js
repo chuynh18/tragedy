@@ -1,7 +1,6 @@
 "use strict";
 
 var inputText;
-var spliced ="";
 var displayText = "";
 
 // add more characters to find and replace here as they are discovered
@@ -22,6 +21,7 @@ const charTable = [
 var parseURL = function() {
     var URL = window.location.href;
     var start = URL.search("q=");
+    var spliced = "";
     if (URL.indexOf("q=") !== -1) {
         for (var i = start + 2; i < URL.length; i++) {
             spliced += URL[i];
