@@ -5,7 +5,6 @@ var spliced ="";
 var displayText = "";
 
 // add more characters to find and replace here as they are discovered
-// it seems like github needs to find and replace the +; sadly mel can't say + unless the prompt is used
 const replacementTable = [
     {find: "%20", replace: " "},
     {find: "%21", replace: "!"},
@@ -20,7 +19,7 @@ const replacementTable = [
     {find: "+", replace: " "} // yes, Mel can't say "+" and it's all GitHub's fault!
 ];
 
-var grabURL = function() {
+var parseURL = function() {
     var URL = window.location.href;
     var start = URL.search("q=");
     if (URL.indexOf("q=") !== -1) {
@@ -56,8 +55,7 @@ var randomizeColor = function() {
 };
 
 // this is how we chunk up inputText and display it one character at a time
-// we don't (can't!) use a for loop, because javascript is dumb
-// okay, not dumb, but asynchronous
+// we don't (can't!) use a for loop, because JavaScript is dumb.  I meant asynchronous.
 var i = 0;
 var printerFunction = function() {
     if (i < inputText.length) {
@@ -68,7 +66,6 @@ var printerFunction = function() {
             printerFunction();
         }, 50);
     }
-    
     else {
         i = 0;
         displayText = "";
@@ -80,6 +77,6 @@ var printerFunction = function() {
 
 // ---------------------------------- function calls ----------------------------------
 
-grabURL();
+parseURL();
 randomizeColor();
 printerFunction();
