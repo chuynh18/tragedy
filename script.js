@@ -5,7 +5,7 @@ var spliced ="";
 var displayText = "";
 
 // add more characters to find and replace here as they are discovered
-const replacementTable = [
+const charTable = [
     {find: "%20", replace: " "},
     {find: "%21", replace: "!"},
     {find: "%22", replace: '"'},
@@ -26,9 +26,9 @@ var parseURL = function() {
         for (var i = start + 2; i < URL.length; i++) {
             spliced += URL[i];
         };
-        for (var i = 0; i < replacementTable.length; i++) {
-            while (spliced.indexOf(replacementTable[i].find) !== -1) {
-                spliced = spliced.replace(replacementTable[i].find, replacementTable[i].replace)
+        for (var i = 0; i < charTable.length; i++) {
+            while (spliced.indexOf(charTable[i].find) !== -1) {
+                spliced = spliced.replace(charTable[i].find, charTable[i].replace)
             };
         };
         inputText = spliced;
