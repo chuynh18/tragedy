@@ -15,7 +15,7 @@ var replacementTable = [
     {find: "%60", replace: "`"},
     {find: "+", replace: " "}
 ];
-
+ // lololo sigh ugly.  someday I will use the above
 var grabURL = function() {
     var URL = window.location.href;
     var start = URL.search("q=");
@@ -23,35 +23,10 @@ var grabURL = function() {
         for (var i = start + 2; i < URL.length; i++) {
             spliced += URL[i];
         };
-        while (spliced.indexOf("%20") !== -1) {
-            spliced = spliced.replace("%20", " ");
-        };
-        while (spliced.indexOf("%21") !== -1) {
-            spliced = spliced.replace("%21", "!");
-        };
-        while (spliced.indexOf("%22") !== -1) {
-            spliced = spliced.replace("%22", '"');
-        };
-        while (spliced.indexOf("%27") !== -1) {
-            spliced = spliced.replace("%27", "'");
-        };
-        while (spliced.indexOf("%2C") !== -1) {
-            spliced = spliced.replace("%2C", ",");
-        };
-        while (spliced.indexOf("%3A") !== -1) {
-            spliced = spliced.replace("%3A", ":");
-        };
-        while (spliced.indexOf("%3C") !== -1) {
-            spliced = spliced.replace("%3C", "<");
-        };
-        while (spliced.indexOf("%3E") !== -1) {
-            spliced = spliced.replace("%3E", ">");
-        };
-        while (spliced.indexOf("%60") !== -1) {
-            spliced = spliced.replace("%60", "`");
-        };
-        while (spliced.indexOf("+") !== -1) {
-            spliced = spliced.replace("+", " ");
+        for (var i = 0; i < replacementTable.length; i++) {
+            while (spliced.indexOf(replacementTable[i].find) !== -1) {
+                spliced = spliced.replace(replacementTable[i].find, replacementTable[i].replace)
+            };
         };
         inputText = spliced;
     }
