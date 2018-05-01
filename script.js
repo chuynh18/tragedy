@@ -2,6 +2,7 @@
 
 var inputText;
 var spliced ="";
+var displayText = "";
 
 // add more characters to find and replace here as they are discovered
 // it seems like github needs to find and replace the +; sadly mel can't say + unless the prompt is used
@@ -37,13 +38,6 @@ var grabURL = function() {
         inputText = prompt("What does Mel say?", "Don't forget to sign in to BootCamp Spot!");
     };
 };
-
-// yes I call a function up here.  deal with it.  it's worth it, because now
-// Mel can parse things to say from the URL!  so good!
-grabURL();
-
-var displayText = "";
-
 
 var genRandomColor = function(numChars) {
     var colorArray = ["0","1","2","3","4","5","6","7","8","9","a","b","c","d","e","f"];
@@ -84,7 +78,8 @@ var printerFunction = function() {
     };
 };
 
-//------------------------------------------------------------------------------
+// ---------------------------------- function calls ----------------------------------
 
+grabURL();
 randomizeColor();
 printerFunction();
