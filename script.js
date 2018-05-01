@@ -110,7 +110,7 @@ var printerFunction = function() {
             // keep on going until you finish "saying" what you "want" to say!
             printerFunction();
             // how long to wait in millis before kicking off printerFunction() again - this makes it so each additional letter appears 100 millis later
-        }, 100);
+        }, 50);
     }
     
     else {
