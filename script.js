@@ -5,7 +5,7 @@ var spliced ="";
 
 // add more characters to find and replace here as they are discovered
 // it seems like github needs to find and replace the +; sadly mel can't say + unless the prompt is used
-var replacementTable = [
+const replacementTable = [
     {find: "%20", replace: " "},
     {find: "%21", replace: "!"},
     {find: "%22", replace: '"'},
@@ -14,6 +14,7 @@ var replacementTable = [
     {find: "%3A", replace: ":"},
     {find: "%3C", replace: "<"},
     {find: "%3E", replace: ">"},
+    {find: "%40", replace: "@"},
     {find: "%60", replace: "`"},
     {find: "+", replace: " "}
 ];
