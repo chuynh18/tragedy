@@ -16,7 +16,7 @@ const replacementTable = [
     {find: "%3E", replace: ">"},
     {find: "%40", replace: "@"},
     {find: "%60", replace: "`"},
-    {find: "+", replace: " "}
+    {find: "+", replace: " "} // yes, Mel can't say "+" and it's all GitHub's fault!
 ];
 
 var grabURL = function() {
