@@ -1,10 +1,52 @@
 "use strict"; // only the strictest code
-
-// this will be the user's input
-// only need to declare it, not assign it any value.  It'll be assigned a value later by a prompt
 var inputText;
+var spliced ="";
+
+// if I ever want to do things more cleanly someday
+var replacementTable = [
+{find: "%20", replace: " "},
+{find: "%22", replace: '"'},
+{find: "%27", replace: "'"},
+{find: "%3C", replace: "<"},
+{find: "%3E", replace: ">"},
+{find: "%60", replace: "`"},
+];
+
+var grabURL = function() {
+    var URL = window.location.href;
+    var start = URL.search("q=");
+    if (URL.indexOf("q=") !== -1) {
+        for (var i = start + 2; i < URL.length; i++) {
+            spliced += URL[i];
+        };
+        while (spliced.indexOf("%20") !== -1) {
+            spliced = spliced.replace("%20", " ");
+        };
+        while (spliced.indexOf("%22") !== -1) {
+            spliced = spliced.replace("%22", '"');
+        };
+        while (spliced.indexOf("%27") !== -1) {
+            spliced = spliced.replace("%27", "'");
+        };
+        while (spliced.indexOf("%3C") !== -1) {
+            spliced = spliced.replace("%3C", "<");
+        };
+        while (spliced.indexOf("%3E") !== -1) {
+            spliced = spliced.replace("%3E", ">");
+        };
+        while (spliced.indexOf("%60") !== -1) {
+            spliced = spliced.replace("%60", "`");
+        };
+        inputText = spliced;
+    }
+    else {
+        inputText = prompt("What does Mel say?", "Don't forget to sign in to BootCamp Spot!");
+    };
+};
+grabURL();
+
 // this is what will be pushed to the screen
-// defined as an empty string because we add to displayText later.  If we only declared displayText, we'd get an error
+// defined as an empty string because we append strings to displayText later.  If we only declared displayText, we'd get an error
 var displayText = "";
 
 // this generates a random string beginning with "#", followed by numChars number of hex digits (that is, 0 through f)
@@ -72,6 +114,6 @@ var printerFunction = function() {
 //------------------------------------------------------------------------------
 
 // what words do you want to put in Mel's mouth?
-inputText = prompt("What does Mel say?", "Don't forget to sign in to BootCamp Spot!");
+
 randomizeColor();
 printerFunction();
