@@ -4,12 +4,16 @@ var spliced ="";
 
 // if I ever want to do things more cleanly someday
 var replacementTable = [
-{find: "%20", replace: " "},
-{find: "%22", replace: '"'},
-{find: "%27", replace: "'"},
-{find: "%3C", replace: "<"},
-{find: "%3E", replace: ">"},
-{find: "%60", replace: "`"},
+    {find: "%20", replace: " "},
+    {find: "%21", replace: "!"},
+    {find: "%22", replace: '"'},
+    {find: "%27", replace: "'"},
+    {find: "%2C", replace: ","},
+    {find: "%3A", replace: ":"},
+    {find: "%3C", replace: "<"},
+    {find: "%3E", replace: ">"},
+    {find: "%60", replace: "`"},
+    {find: "+", replace: " "}
 ];
 
 var grabURL = function() {
@@ -21,6 +25,9 @@ var grabURL = function() {
         };
         while (spliced.indexOf("%20") !== -1) {
             spliced = spliced.replace("%20", " ");
+        };
+        while (spliced.indexOf("%21") !== -1) {
+            spliced = spliced.replace("%21", "!");
         };
         while (spliced.indexOf("%22") !== -1) {
             spliced = spliced.replace("%22", '"');
