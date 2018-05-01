@@ -77,6 +77,6 @@ var printerFunction = function() {
 
 // ---------------------------------- function calls ----------------------------------
 
-parseURL();
-randomizeColor();
-printerFunction();
+parseURL(); // runs once, gets text to write either through URL or prompt
+randomizeColor(); // infinite loop
+printerFunction(); // infinite loop
