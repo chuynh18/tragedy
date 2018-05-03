@@ -21,11 +21,9 @@ const charTable = [
 var parseURL = function() {
     var URL = window.location.href;
     var start = URL.search("q=");
-    var spliced = "";
+    var spliced;
     if (URL.indexOf("q=") !== -1) {
-        for (var i = start + 2; i < URL.length; i++) {
-            spliced += URL[i];
-        };
+        spliced = URL.substr(start+2);
         for (var i = 0; i < charTable.length; i++) {
             while (spliced.indexOf(charTable[i].find) !== -1) {
                 spliced = spliced.replace(charTable[i].find, charTable[i].replace)
