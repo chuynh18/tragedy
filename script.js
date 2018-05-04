@@ -13,17 +13,16 @@ const charTable = [
     {find: "%3A", replace: ":"},
     {find: "%3C", replace: "<"},
     {find: "%3E", replace: ">"},
+    {find: "%3F", replace: "?"},
     {find: "%40", replace: "@"},
     {find: "%60", replace: "`"},
-    {find: "+", replace: " "} // yes, Mel can't say "+" and it's all GitHub's fault!
+    {find: "+", replace: " "} // did not happen locally, but space was replaced by +
 ];
 
 var parseURL = function() {
     var URL = window.location.href;
-    var start = URL.search("q=");
-    var spliced;
     if (URL.indexOf("q=") !== -1) {
-        spliced = URL.substr(start+2);
+        var spliced = URL.substr(URL.search("q=") + 2);
         for (var i = 0; i < charTable.length; i++) {
             while (spliced.indexOf(charTable[i].find) !== -1) {
                 spliced = spliced.replace(charTable[i].find, charTable[i].replace)
