@@ -20,7 +20,7 @@ var displayText = "";
 // we don't (can't!) use a for loop, because JavaScript is dumb.  I meant asynchronous.
 var i = 0;
 var printerFunction = function() {
-    if (i < inputText[currentLine].length) {
+    if (currentLine < inputText.length && i < inputText[currentLine].length) {
         displayText = displayText.concat(inputText[currentLine][i]);
         i++;
         document.getElementById("textDisplay").textContent = displayText;
@@ -30,8 +30,10 @@ var printerFunction = function() {
     }
     else {
         if (currentLine < inputText.length) {
+            console.log("before: " + currentLine);
             i = 0;
             currentLine++;
+            console.log("after: " + currentLine);
             displayText = "";
             document.getElementById("palpatine").src="palpysmallstill.jpg";
             setTimeout(function() {
