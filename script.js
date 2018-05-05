@@ -30,10 +30,8 @@ var printerFunction = function() {
     }
     else {
         if (currentLine < inputText.length) {
-            console.log("before: " + currentLine);
             i = 0;
             currentLine++;
-            console.log("after: " + currentLine);
             displayText = "";
             document.getElementById("palpatine").src="palpysmallstill.jpg";
             setTimeout(function() {
