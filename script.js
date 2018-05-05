@@ -11,27 +11,28 @@ var inputText = [
     "Unfortunately, he taught his apprentice everything he knew, then his apprentice killed him in his sleep.",
     "It's ironic... he could save others from death... but not himself."
 ];
-
-var currentLine = 0;
-
 var displayText = "";
 
+var currentLine = 0;
+var i = 0;
 // this is how we chunk up inputText and display it one character at a time
 // we don't (can't!) use a for loop, because JavaScript is dumb.  I meant asynchronous.
-var i = 0;
 var printerFunction = function() {
     if (currentLine < inputText.length && i < inputText[currentLine].length) {
         displayText = displayText.concat(inputText[currentLine][i]);
         i++;
         document.getElementById("textDisplay").textContent = displayText;
-        
+        // pause dramatically on periods; the best actors do so for 800 ms
         if (displayText[displayText.length-1] === ".") {
+            // it's also good practice to not move your mouth when you're not speaking
             document.getElementById("palpatine").src="palpysmallstill.jpg";
             setTimeout(function() {
+                // don't forget to start speaking again
                 document.getElementById("palpatine").src="palpysmalltalk.gif";
                 printerFunction();
             }, 800);
         }
+        // pause dramatically on commas, but less dramatically than for periods.  500 ms is good
         else if (displayText[displayText.length-1] === ",") {
             document.getElementById("palpatine").src="palpysmallstill.jpg";
             setTimeout(function() {
@@ -39,6 +40,7 @@ var printerFunction = function() {
                 printerFunction();
             }, 500);
         }
+        // every other character should be spoken at a rate of one character per 35 milliseconds
         else {
             setTimeout(function() {
                 printerFunction();
@@ -46,6 +48,7 @@ var printerFunction = function() {
         };
     }
     else {
+        // don't forget to say the next line, palpy!
         if (currentLine < inputText.length) {
             i = 0;
             currentLine++;
@@ -56,6 +59,7 @@ var printerFunction = function() {
                 printerFunction();
             }, 4000);
         }
+        // and NEVER stop talking!
         else {
             currentLine = 0;
             document.getElementById("palpatine").src="palpysmallstill.jpg";
