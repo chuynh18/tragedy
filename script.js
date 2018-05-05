@@ -1,29 +1,39 @@
 "use strict";
 
-var inputText = [
-    "Did you ever hear the tragedy of Darth Plagueis the Wise?",
-    "I thought not. It's not a story the Jedi would tell you.  It's a Sith legend.",
-    "Darth Plagueis was a Dark Lord of the Sith, so powerful, and so wise...",
-    "He could use the Force to influence the midichlorians to create... life.",
-    "He had such a knowledge of the dark side that he could even keep the ones he cared about from dying.",
-    "The dark side of the Force is a pathway to many abilities some consider to be... unnatural.",
-    "He became so powerful... the only thing he was afraid of was losing his power, which eventually, of course, he did.",
-    "Unfortunately, he taught his apprentice everything he knew, then his apprentice killed him in his sleep.",
-    "It's ironic... he could save others from death... but not himself."
+var input = [
+    {text: "Did you ever hear the tragedy of Darth Plagueis the Wise?", audio: "1.webm", delay: 83},
+    {text: "I thought not. It's not a story the Jedi would tell you.  It's a Sith legend.", audio: "2.webm", delay: 70},
+    {text: "Darth Plagueis was a Dark Lord of the Sith, so powerful, and so wise", audio: "3.webm", delay: 78},
+    {text: "He could use the Force to influence the midichlorians.. to create.. life.", audio: "4.webm", delay: 65},
+    {text: "He had such a knowledge of the dark side, he could even keep the ones he cared about... from dying.", audio: "5.webm", delay: 80},
+    {text: "The dark side of the Force is a pathway to many abilities some consider to be unnatural.", audio: "6.webm", delay: 77},
+    {text: "He became so powerful... the only thing he was afraid of was.. losing his power which eventually of course he did.", audio: "7.webm", delay: 62},
+    {text: "Unfortunately, he taught his apprentice everything he knew... then his apprentice killed him in his sleep.", audio: "8.webm", delay: 65},
+    {text: "Ironic.. he could save others from death.. but not himself.", audio: "9.webm", delay: 66}
 ];
 var displayText = "";
 
 var currentLine = 0;
 var i = 0;
-// this is how we chunk up inputText and display it one character at a time
+
+var audio = "";
+
+// this is how we chunk up input[currentLine].text and display it one character at a time
 // we don't (can't!) use a for loop, because JavaScript is dumb.  I meant asynchronous.
 var printerFunction = function() {
-    if (currentLine < inputText.length && i < inputText[currentLine].length) {
-        displayText = displayText.concat(inputText[currentLine][i]);
+    if (currentLine < input.length && i < input[currentLine].text.length) {
+        displayText = displayText.concat(input[currentLine].text[i]);
         i++;
         document.getElementById("textDisplay").textContent = displayText;
+        if (i === 1) {
+            audio = new Audio(input[currentLine].audio);
+            audio.play();
+            setTimeout(function() {
+                printerFunction();
+            }, 50);
+        }
         // pause dramatically on periods; the best actors do so for 800 ms
-        if (displayText[displayText.length-1] === ".") {
+        else if (displayText[displayText.length-1] === ".") {
             // it's also good practice to not move your mouth when you're not speaking
             document.getElementById("palpatine").src="palpysmallstill.jpg";
             setTimeout(function() {
@@ -44,12 +54,12 @@ var printerFunction = function() {
         else {
             setTimeout(function() {
                 printerFunction();
-            }, 35);
+            }, input[currentLine].delay);
         };
     }
     else {
         // don't forget to say the next line, palpy!
-        if (currentLine < inputText.length) {
+        if (currentLine < input.length) {
             i = 0;
             currentLine++;
             displayText = "";
@@ -57,7 +67,7 @@ var printerFunction = function() {
             setTimeout(function() {
                 document.getElementById("palpatine").src="palpysmalltalk.gif";
                 printerFunction();
-            }, 3000);
+            }, 2000);
         }
         // and NEVER stop talking!
         else {
@@ -66,7 +76,7 @@ var printerFunction = function() {
             setTimeout(function() {
                 document.getElementById("palpatine").src="palpysmalltalk.gif";
                 printerFunction();
-            }, 7000);
+            }, 6000);
         };
     };
 
@@ -74,4 +84,7 @@ var printerFunction = function() {
 
 // ---------------------------------- function calls ----------------------------------
 
-printerFunction(); // infinite loop
+document.addEventListener('click', function() {
+    document.getElementById("palpatine").src="palpysmalltalk.gif";
+    printerFunction();
+});
