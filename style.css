@@ -1,5 +1,5 @@
 body {
-    font-family: 'Metamorphous', cursive;
+    font-family: 'Forum', cursive;
     text-align: center;
     font-size: 48pt;
     background-color: #111;
@@ -14,5 +14,5 @@ img {
 }
 
 #textDisplay {
-    text-shadow: 2px 2px white;
+    text-shadow: 2px 1px white;
 }
