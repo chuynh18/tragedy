@@ -1,22 +1,18 @@
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Metamorphous', cursive;
     text-align: center;
     font-size: 48pt;
-    background-color: #eee;
-}
-
-#mel {
-    text-shadow: 2px 2px red;
+    background-color: #111;
+	color: #eee
 }
 
 img {
     border: solid;
-    border-radius: 5%;
     border-width: 3px;
-    border-color: blue;
+    border-color: red;
     margin: 25px auto 0;
 }
 
 #textDisplay {
-    text-shadow: 2px 2px black;
+    text-shadow: 2px 2px crimson;
 }
