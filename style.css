@@ -3,7 +3,7 @@ body {
     text-align: center;
     font-size: 48pt;
     background-color: #111;
-	color: #eee
+	color: red;
 }
 
 img {
@@ -14,5 +14,5 @@ img {
 }
 
 #textDisplay {
-    text-shadow: 2px 2px crimson;
+    text-shadow: 2px 2px white;
 }
