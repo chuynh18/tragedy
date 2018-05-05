@@ -24,9 +24,26 @@ var printerFunction = function() {
         displayText = displayText.concat(inputText[currentLine][i]);
         i++;
         document.getElementById("textDisplay").textContent = displayText;
-        setTimeout(function() {
-            printerFunction();
-        }, 50);
+        
+        if (displayText[displayText.length-1] === ".") {
+            document.getElementById("palpatine").src="palpysmallstill.jpg";
+            setTimeout(function() {
+                document.getElementById("palpatine").src="palpysmalltalk.gif";
+                printerFunction();
+            }, 800);
+        }
+        else if (displayText[displayText.length-1] === ",") {
+            document.getElementById("palpatine").src="palpysmallstill.jpg";
+            setTimeout(function() {
+                document.getElementById("palpatine").src="palpysmalltalk.gif";
+                printerFunction();
+            }, 500);
+        }
+        else {
+            setTimeout(function() {
+                printerFunction();
+            }, 35);
+        };
     }
     else {
         if (currentLine < inputText.length) {
@@ -35,17 +52,17 @@ var printerFunction = function() {
             displayText = "";
             document.getElementById("palpatine").src="palpysmallstill.jpg";
             setTimeout(function() {
-                printerFunction();
                 document.getElementById("palpatine").src="palpysmalltalk.gif";
-            }, 5000);
+                printerFunction();
+            }, 4000);
         }
         else {
             currentLine = 0;
             document.getElementById("palpatine").src="palpysmallstill.jpg";
             setTimeout(function() {
-                printerFunction();
                 document.getElementById("palpatine").src="palpysmalltalk.gif";
-            }, 10000);
+                printerFunction();
+            }, 8000);
         };
     };
 
