@@ -3,12 +3,12 @@
 var input = [
     {text: "Did you ever hear the tragedy of Darth Plagueis the Wise?", audio: "1.webm", delay: 84, lineDelay: 1250},
     {text: "I thought not. It's not a story the Jedi would tell you.  It's a Sith legend.", audio: "2.webm", delay: 70, lineDelay: 600},
-    {text: "Darth Plagueis was a Dark Lord of the Sith, so powerful, and so wise", audio: "3.webm", delay: 85, lineDelay: 1100},
+    {text: "Darth Plagueis was a Dark Lord of the Sith, so powerful, and so wise", audio: "3.webm", delay: 85, lineDelay: 700},
     {text: "He could use the Force to influence the midichlorians.. to create.. life.", audio: "4.webm", delay: 65, lineDelay: 400},
-    {text: "He had such a knowledge of the Dark Side, he could even keep the ones he cared about... from dying.", audio: "5.webm", delay: 79, lineDelay: 1250},
+    {text: "He had such a knowledge of the Dark Side, he could even keep the ones he cared about... from dying.", audio: "5.webm", delay: 78, lineDelay: 1150},
     {text: "The Dark Side of the Force is a pathway to many abilities some consider to be unnatural.", audio: "6.webm", delay: 92, lineDelay: 300},
     {text: "He became so powerful... the only thing he was afraid of was.. losing his power which eventually of course he did.", audio: "7.webm", delay: 62, lineDelay: 600},
-    {text: "Unfortunately, he taught his apprentice everything he knew... then his apprentice killed him in his sleep.", audio: "8.webm", delay: 64, lineDelay: 600},
+    {text: "Unfortunately, he taught his apprentice everything he knew... then his apprentice killed him in his sleep.", audio: "8.webm", delay: 60, lineDelay: 300},
     {text: "Ironic.. he could save others from death.. but not himself.", audio: "9.webm", delay: 62, lineDelay: 0}
 ];
 var displayText = "";
