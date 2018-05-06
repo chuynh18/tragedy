@@ -1,5 +1,6 @@
 "use strict";
 
+// a literary and cinematic masterpiece
 var input = [
     {text: "Did you ever hear the tragedy of Darth Plagueis the Wise?", audio: "1.webm", delay: 84, lineDelay: 1250},
     {text: "I thought not. It's not a story the Jedi would tell you.  It's a Sith legend.", audio: "2.webm", delay: 70, lineDelay: 600},
@@ -50,7 +51,7 @@ var printerFunction = function() {
                 printerFunction();
             }, 500);
         }
-        // every other character should be spoken at a rate of one character per 35 milliseconds
+        // every other character should be spoken at... who knows.  Some other rate.  Please see the array of objects above.
         else {
             setTimeout(function() {
                 printerFunction();
@@ -69,7 +70,7 @@ var printerFunction = function() {
                 printerFunction();
             }, input[currentLine-1].lineDelay);
         }
-        // and NEVER stop talking!
+        // and NEVER stop talking!  EVERYONE needs to hear the Tragedy of Darth Plagueis the Wise
         else {
             currentLine = 0;
             document.getElementById("palpatine").src="palpysmallstill.jpg";
@@ -85,7 +86,7 @@ var printerFunction = function() {
 // ---------------------------------- function calls ----------------------------------
 
 document.getElementById("start").addEventListener('click', function() {
-    document.getElementById("start").textContent = "";
+    document.getElementById("start").textContent = ""; // it would be horrible if people could repeatedly invoke printerFunction()
     document.getElementById("palpatine").src="palpysmalltalk.gif";
     printerFunction();
 });
