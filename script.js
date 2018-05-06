@@ -31,7 +31,7 @@ var printerFunction = function() {
             audio.play();
             setTimeout(function() {
                 printerFunction();
-            }, 50);
+            }, input[currentLine].delay);
         }
         // pause dramatically on periods; the best actors do so for 800 ms
         else if (displayText[displayText.length-1] === ".") {
