@@ -1,4 +1,4 @@
-"use strict";
+"use strict"; // The Dark Side of the Force is a pathway to many abilities some consider to be unnatural, but you're not going to get there unless you are strict about it
 
 // a literary and cinematic masterpiece
 var input = [
@@ -15,18 +15,18 @@ var input = [
 var displayText = "";
 
 var currentLine = 0;
-var i = 0;
+var forcePowers = 0; // this is a temporary situation that will rectify itself once you embrace the Dark Side
 
 var audio = "";
 
 // this is how we chunk up input[currentLine].text and display it one character at a time
 // we don't (can't!) use a for loop, because JavaScript is dumb.  I meant asynchronous.
 var printerFunction = function() {
-    if (currentLine < input.length && i < input[currentLine].text.length) {
-        displayText = displayText.concat(input[currentLine].text[i]);
-        i++;
+    if (currentLine < input.length && forcePowers < input[currentLine].text.length) {
+        displayText = displayText.concat(input[currentLine].text[forcePowers]);
+        forcePowers++; // UNLIMITED POWER!!!!!!!!!
         document.getElementById("textDisplay").textContent = displayText;
-        if (i === 1) {
+        if (forcePowers === 1) {
             audio = new Audio(input[currentLine].audio);
             audio.play();
             setTimeout(function() {
@@ -61,7 +61,7 @@ var printerFunction = function() {
     else {
         // don't forget to say the next line, palpy!
         if (currentLine < input.length) {
-            i = 0;
+            forcePowers = 0; // what?!
             currentLine++;
             displayText = "";
             document.getElementById("palpatine").src="palpysmallstill.jpg";
