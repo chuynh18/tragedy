@@ -15,12 +15,13 @@ var input = [
     {text: "so powerful, and so wise...", delay: 85, lineDelay: 100, commaDelay: 0, periodDelay: 200},
     {text: "He could use the Force to influence the midichlorians... to create... life.", audio: "4.webm", delay: 65, lineDelay: 400, commaDelay: 0, periodDelay: 533},
     {text: "He had such a knowledge of the Dark Side, he could even", audio: "5.webm", delay: 78, lineDelay: 500, commaDelay: 500, periodDelay: 0},
-    {text: "keep the ones he cared about... from dying.", delay: 78, lineDelay: 1150, commaDelay: 0, periodDelay: 500},
+    {text: "keep", delay: 78, lineDelay: 380, commaDelay: 0, periodDelay: 500},
+    {text: "the ones he cared about... from dying.", delay: 80, lineDelay: 1150, commaDelay: 0, periodDelay: 460},
     {text: "The Dark Side", audio: "6.webm", delay: 92, lineDelay: 0, commaDelay: 0, periodDelay: 0},
     {text: "of the Force", delay: 50, lineDelay: 0, commaDelay: 0, periodDelay: 0},
-    {text: "is a pathway to many abilities some consider to be", delay: 92, lineDelay: 500, commaDelay: 0, periodDelay: 0},
-    {text: "unnatural.", delay: 92, lineDelay: 300, commaDelay: 0, periodDelay: 800},
-    {text: "He became so powerful...", audio: "7.webm", delay: 65, lineDelay: 0, commaDelay: 0, periodDelay: 750},
+    {text: "is a pathway to many abilities some consider to be", delay: 92, lineDelay: 550, commaDelay: 0, periodDelay: 0},
+    {text: "unnatural.", delay: 100, lineDelay: 300, commaDelay: 0, periodDelay: 800},
+    {text: "He became so powerful...", audio: "7.webm", delay: 72, lineDelay: 0, commaDelay: 0, periodDelay: 730},
     {text: "the only thing he was afraid of was...", delay: 54, lineDelay: 0, commaDelay: 0, periodDelay: 576},
     {text: "losing his power", delay: 62, lineDelay: 600, commaDelay: 0, periodDelay: 0},
     {text: "which", delay: 62, lineDelay: 400, commaDelay: 0, periodDelay: 0},
@@ -48,7 +49,7 @@ var printerFunction = function() {
         if (forcePowers === 0) {
             // if the key "audio" exists in input[currentLine], play it
             if ("audio" in input[currentLine]) {
-                forcePowers++;
+                forcePowers++;  // UNNNLLIMITED... POWERRRR!!!!
                 audio = new Audio(input[currentLine].audio);
                 audio.play();
                 // prevent audio and text from getting out of sync on slow internet connections... I hope
