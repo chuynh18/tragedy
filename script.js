@@ -9,7 +9,7 @@ var input = [
     {text: "It's a Sith legend.", delay: 70, lineDelay: 600, commaDelay: 500, periodDelay: 800},
     {text: "Darth Plagueis", audio: "3.webm", delay: 85, lineDelay: 700, commaDelay: 500, periodDelay: 800},
     {text: "was a Dark Lord of the Sith,", delay: 75, lineDelay: 0, commaDelay: 500, periodDelay: 0},
-    {text: "so powerful, and so wise...", delay: 85, lineDelay: 700, commaDelay: 0, periodDelay: 0},
+    {text: "so powerful, and so wise...", delay: 85, lineDelay: 100, commaDelay: 0, periodDelay: 200},
     {text: "He could use the Force to influence the midichlorians... to create... life.", audio: "4.webm", delay: 65, lineDelay: 400, commaDelay: 500, periodDelay: 533},
     {text: "He had such a knowledge of the Dark Side, he could even", audio: "5.webm", delay: 78, lineDelay: 500, commaDelay: 500, periodDelay: 800},
     {text: "keep the ones he cared about... from dying.", delay: 78, lineDelay: 1150, commaDelay: 500, periodDelay: 500},
@@ -40,11 +40,11 @@ var audio = "";
 var printerFunction = function() {
     if (currentLine < input.length && forcePowers < input[currentLine].text.length) {
         displayText = displayText.concat(input[currentLine].text[forcePowers]);
-        forcePowers++; // UNLIMITED POWER!!!!!!!!!
         document.getElementById("textDisplay").textContent = displayText;
-        if (forcePowers === 1) {
+        if (forcePowers === 0) {
             // this check will hopefully allow me make it so text and audio don't have to have a 1:1 relationship inside var input
             if ("audio" in input[currentLine]) {
+                forcePowers++;
                 audio = new Audio(input[currentLine].audio);
                 // prevent audio and text from getting out of sync on slow internet connections... I hope
                 audio.play();
@@ -52,15 +52,17 @@ var printerFunction = function() {
                 document.getElementById("palpatine").src="palpysmalltalk.gif";
             }
             else {
-            setTimeout(function() {
-                printerFunction();
-            }, input[currentLine].delay);
+                forcePowers++;
+                setTimeout(function() {
+                    printerFunction();
+                }, input[currentLine].delay);
             };
         }
         // pause dramatically on periods
         else if (displayText[displayText.length-1] === ".") {
             // it's also good practice to not move your mouth when you're not speaking
             document.getElementById("palpatine").src="palpysmallstill.jpg";
+            forcePowers++;
             setTimeout(function() {
                 // don't forget to start speaking again
                 document.getElementById("palpatine").src="palpysmalltalk.gif";
@@ -70,6 +72,7 @@ var printerFunction = function() {
         // pause dramatically on commas, too
         else if (displayText[displayText.length-1] === ",") {
             document.getElementById("palpatine").src="palpysmallstill.jpg";
+            forcePowers++;
             setTimeout(function() {
                 document.getElementById("palpatine").src="palpysmalltalk.gif";
                 printerFunction();
@@ -78,6 +81,7 @@ var printerFunction = function() {
         // every other character should be spoken at... who knows.  Some other rate.  Please see the array of objects above.
         else {
             setTimeout(function() {
+                forcePowers++;
                 printerFunction();
             }, input[currentLine].delay);
         };
