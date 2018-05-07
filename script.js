@@ -99,8 +99,10 @@ var printerFunction = function() {
                     document.getElementById("palpatine").src="palpysmallstill.jpg";
                 }
                 else {
-                    //otherwise, even though it's a new object, it's part of the same line
+                    // otherwise, even though it's a new object, it's part of the same line
                     displayText += " ";
+                    // still should pause or else it looks a little uncanny
+                    document.getElementById("palpatine").src="palpysmallstill.jpg";
                 };
             };
             setTimeout(function() {
