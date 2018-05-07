@@ -2,29 +2,32 @@
 
 // a literary and cinematic masterpiece
 var input = [
-    {text: "Did you ever hear", audio: "1.webm", delay: 68, lineDelay: 0, commaDelay: 500, periodDelay: 800},
-    {text: "the tragedy of Darth Plagueis the Wise?", delay: 84, lineDelay: 1250, commaDelay: 500, periodDelay: 800},
-    {text: "I thought not.", audio: "2.webm", delay: 70, lineDelay: 0, commaDelay: 500, periodDelay: 850},
-    {text: "It's not a story the Jedi would tell you.", delay: 55, lineDelay: 0, commaDelay: 500, periodDelay: 1700},
-    {text: "It's a Sith legend.", delay: 70, lineDelay: 600, commaDelay: 500, periodDelay: 800},
-    {text: "Darth Plagueis", audio: "3.webm", delay: 85, lineDelay: 700, commaDelay: 500, periodDelay: 800},
+    {text: "Did you ever hear", audio: "1.webm", delay: 69, lineDelay: 0, commaDelay: 0, periodDelay: 0},
+    {text: "the tragedy", delay: 86, lineDelay: 100, commaDelay: 0, periodDelay: 0},
+    {text: "of", delay: 92, lineDelay: 100, commaDelay: 0, periodDelay: 0},
+    {text: "Darth Plagueis", delay: 92, lineDelay: 100, commaDelay: 0, periodDelay: 0},
+    {text: "the Wise?", delay: 86, lineDelay: 1250, commaDelay: 0, periodDelay: 0},
+    {text: "I thought not.", audio: "2.webm", delay: 70, lineDelay: 0, commaDelay: 0, periodDelay: 850},
+    {text: "It's not a story the Jedi would tell you.", delay: 55, lineDelay: 1700, commaDelay: 0, periodDelay: 0},
+    {text: "It's a Sith legend.", delay: 70, lineDelay: 600, commaDelay: 0, periodDelay: 800},
+    {text: "Darth Plagueis", audio: "3.webm", delay: 85, lineDelay: 700, commaDelay: 0, periodDelay: 0},
     {text: "was a Dark Lord of the Sith,", delay: 75, lineDelay: 0, commaDelay: 500, periodDelay: 0},
     {text: "so powerful, and so wise...", delay: 85, lineDelay: 100, commaDelay: 0, periodDelay: 200},
-    {text: "He could use the Force to influence the midichlorians... to create... life.", audio: "4.webm", delay: 65, lineDelay: 400, commaDelay: 500, periodDelay: 533},
-    {text: "He had such a knowledge of the Dark Side, he could even", audio: "5.webm", delay: 78, lineDelay: 500, commaDelay: 500, periodDelay: 800},
-    {text: "keep the ones he cared about... from dying.", delay: 78, lineDelay: 1150, commaDelay: 500, periodDelay: 500},
-    {text: "The Dark Side", audio: "6.webm", delay: 92, lineDelay: 0, commaDelay: 500, periodDelay: 800},
-    {text: "of the Force", delay: 50, lineDelay: 0, commaDelay: 500, periodDelay: 800},
-    {text: "is a pathway to many abilities some consider to be", delay: 92, lineDelay: 500, commaDelay: 500, periodDelay: 800},
-    {text: "unnatural.", delay: 92, lineDelay: 300, commaDelay: 500, periodDelay: 800},
-    {text: "He became so powerful...", audio: "7.webm", delay: 65, lineDelay: 0, commaDelay: 500, periodDelay: 750},
-    {text: "the only thing he was afraid of was...", delay: 54, lineDelay: 0, commaDelay: 500, periodDelay: 576},
-    {text: "losing his power", delay: 62, lineDelay: 600, commaDelay: 500, periodDelay: 800},
-    {text: "which", delay: 62, lineDelay: 400, commaDelay: 500, periodDelay: 800},
-    {text: "eventually of course he did.", delay: 40, lineDelay: 600, commaDelay: 500, periodDelay: 800},
+    {text: "He could use the Force to influence the midichlorians... to create... life.", audio: "4.webm", delay: 65, lineDelay: 400, commaDelay: 0, periodDelay: 533},
+    {text: "He had such a knowledge of the Dark Side, he could even", audio: "5.webm", delay: 78, lineDelay: 500, commaDelay: 500, periodDelay: 0},
+    {text: "keep the ones he cared about... from dying.", delay: 78, lineDelay: 1150, commaDelay: 0, periodDelay: 500},
+    {text: "The Dark Side", audio: "6.webm", delay: 92, lineDelay: 0, commaDelay: 0, periodDelay: 0},
+    {text: "of the Force", delay: 50, lineDelay: 0, commaDelay: 0, periodDelay: 0},
+    {text: "is a pathway to many abilities some consider to be", delay: 92, lineDelay: 500, commaDelay: 0, periodDelay: 0},
+    {text: "unnatural.", delay: 92, lineDelay: 300, commaDelay: 0, periodDelay: 800},
+    {text: "He became so powerful...", audio: "7.webm", delay: 65, lineDelay: 0, commaDelay: 0, periodDelay: 750},
+    {text: "the only thing he was afraid of was...", delay: 54, lineDelay: 0, commaDelay: 0, periodDelay: 576},
+    {text: "losing his power", delay: 62, lineDelay: 600, commaDelay: 0, periodDelay: 0},
+    {text: "which", delay: 62, lineDelay: 400, commaDelay: 0, periodDelay: 0},
+    {text: "eventually of course he did.", delay: 40, lineDelay: 1400, commaDelay: 0, periodDelay: 0},
     {text: "Unfortunately, he taught his apprentice", audio: "8.webm", delay: 60, lineDelay: 300, commaDelay: 1200, periodDelay: 0},
     {text: "everything he knew...", delay: 50, lineDelay: 0, commaDelay: 1200, periodDelay: 500},
-    {text: "then his apprentice killed him in his sleep.", delay: 55, lineDelay: 300, commaDelay: 0, periodDelay: 500},
+    {text: "then his apprentice killed him in his sleep.", delay: 55, lineDelay: 800, commaDelay: 0, periodDelay: 0},
     {text: "Ironic...", audio: "9.webm", delay: 80, lineDelay: 0, commaDelay: 0, periodDelay: 525},
     {text: "he could save others from death...", delay: 55, lineDelay: 0, commaDelay: 0, periodDelay: 550},
     {text: "but not himself.", delay: 80, lineDelay: 0, commaDelay: 0, periodDelay: 0}
@@ -43,15 +46,17 @@ var printerFunction = function() {
         displayText = displayText.concat(input[currentLine].text[forcePowers]);
         document.getElementById("textDisplay").textContent = displayText;
         if (forcePowers === 0) {
-            // this check will hopefully allow me make it so text and audio don't have to have a 1:1 relationship inside var input
+            // if the key "audio" exists in input[currentLine], play it
             if ("audio" in input[currentLine]) {
                 forcePowers++;
                 audio = new Audio(input[currentLine].audio);
-                // prevent audio and text from getting out of sync on slow internet connections... I hope
                 audio.play();
+                // prevent audio and text from getting out of sync on slow internet connections... I hope
+                // we'll also preload (I hope) all the audio via audio tags in index.html
                 audio.oncanplaythrough = printerFunction;
                 document.getElementById("palpatine").src="palpysmalltalk.gif";
             }
+            // if there's no key "audio", just continue to print out the text
             else {
                 forcePowers++;
                 setTimeout(function() {
@@ -94,25 +99,29 @@ var printerFunction = function() {
             currentLine++;
             // prevent errors with this check
             if (currentLine < input.length) {
-                // only clear out the text and pause speaking if audio is present in the object
+                // only clear out the text and pause speaking if the key "audio" is present in input[currentLine]
                 if ("audio" in input[currentLine]) {
                     displayText = "";
                     document.getElementById("palpatine").src="palpysmallstill.jpg";
                 }
                 else {
-                    // otherwise, even though it's a new object, it's part of the same line
+                    // otherwise, even though it's a new object, it's semantically part of the same line
+                    // so we append a space instead of setting the value of displayText to empty string
                     displayText += " ";
-                    // still should pause or else it looks a little uncanny
+                    // still should pause ol' Palpy or else it looks a little uncanny
                     document.getElementById("palpatine").src="palpysmallstill.jpg";
                 };
             };
+            // start Palpy talking animation again when it's time to play the next line
             setTimeout(function() {
                 document.getElementById("palpatine").src="palpysmalltalk.gif";
                 printerFunction();
+            // we already incremented currentLine, so we need to look at currentLine-1 to get the proper delay value
             }, input[currentLine-1].lineDelay);
         }
         // and NEVER stop talking!  EVERYONE needs to hear the Tragedy of Darth Plagueis the Wise
         else {
+            // it begins... again!
             currentLine = 0;
             document.getElementById("palpatine").src="palpysmallstill.jpg";
             setTimeout(function() {
