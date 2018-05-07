@@ -46,8 +46,9 @@ var printerFunction = function() {
             // this check will hopefully allow me make it so text and audio don't have to have a 1:1 relationship inside var input
             if ("audio" in input[currentLine]) {
                 audio = new Audio(input[currentLine].audio);
-                audio.oncanplay = printerFunction();
+                // prevent audio and text from getting out of sync on slow internet connections... I hope
                 audio.play();
+                audio.oncanplay = printerFunction;
             }
             else {
             setTimeout(function() {
@@ -55,7 +56,7 @@ var printerFunction = function() {
             }, input[currentLine].delay);
             };
         }
-        // pause dramatically on periods; the best actors do so for 800 ms
+        // pause dramatically on periods
         else if (displayText[displayText.length-1] === ".") {
             // it's also good practice to not move your mouth when you're not speaking
             document.getElementById("palpatine").src="palpysmallstill.jpg";
@@ -65,7 +66,7 @@ var printerFunction = function() {
                 printerFunction();
             }, input[currentLine].periodDelay);
         }
-        // pause dramatically on commas, but less dramatically than for periods.  500 ms is good
+        // pause dramatically on commas, too
         else if (displayText[displayText.length-1] === ",") {
             document.getElementById("palpatine").src="palpysmallstill.jpg";
             setTimeout(function() {
@@ -85,12 +86,15 @@ var printerFunction = function() {
         if (currentLine < input.length) {
             forcePowers = 0; // what?!
             currentLine++;
+            // prevent errors with this check
             if (currentLine < input.length) {
+                // only clear out the text and pause speaking if audio is present in the object
                 if ("audio" in input[currentLine]) {
                     displayText = "";
                     document.getElementById("palpatine").src="palpysmallstill.jpg";
                 }
                 else {
+                    //otherwise, even though it's a new object, it's part of the same line
                     displayText += " ";
                 };
             };
