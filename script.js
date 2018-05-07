@@ -2,8 +2,9 @@
 
 // a literary and cinematic masterpiece
 var input = [
-    {text: "Did you ever hear", audio: "1.webm", delay: 69, lineDelay: 0, commaDelay: 0, periodDelay: 0},
-    {text: "the tragedy", delay: 86, lineDelay: 100, commaDelay: 0, periodDelay: 0},
+    {text: "Did you ever", audio: "1.webm", delay: 50, lineDelay: 100, commaDelay: 0, periodDelay: 0},
+    {text: "hear", delay: 69, lineDelay: 100, commaDelay: 0, periodDelay: 0},
+    {text: "the tragedy", delay: 86, lineDelay: 300, commaDelay: 0, periodDelay: 0},
     {text: "of", delay: 92, lineDelay: 100, commaDelay: 0, periodDelay: 0},
     {text: "Darth Plagueis", delay: 92, lineDelay: 100, commaDelay: 0, periodDelay: 0},
     {text: "the Wise?", delay: 86, lineDelay: 1250, commaDelay: 0, periodDelay: 0},
