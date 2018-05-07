@@ -46,11 +46,14 @@ var printerFunction = function() {
             // this check will hopefully allow me make it so text and audio don't have to have a 1:1 relationship inside var input
             if ("audio" in input[currentLine]) {
                 audio = new Audio(input[currentLine].audio);
+                audio.oncanplay = printerFunction();
                 audio.play();
-            };
+            }
+            else {
             setTimeout(function() {
                 printerFunction();
             }, input[currentLine].delay);
+            };
         }
         // pause dramatically on periods; the best actors do so for 800 ms
         else if (displayText[displayText.length-1] === ".") {
