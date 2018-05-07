@@ -49,6 +49,7 @@ var printerFunction = function() {
                 // prevent audio and text from getting out of sync on slow internet connections... I hope
                 audio.play();
                 audio.oncanplay = printerFunction;
+                document.getElementById("palpatine").src="palpysmalltalk.gif";
             }
             else {
             setTimeout(function() {
