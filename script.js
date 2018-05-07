@@ -22,11 +22,12 @@ var input = [
     {text: "losing his power", delay: 62, lineDelay: 600, commaDelay: 500, periodDelay: 800},
     {text: "which", delay: 62, lineDelay: 400, commaDelay: 500, periodDelay: 800},
     {text: "eventually of course he did.", delay: 40, lineDelay: 600, commaDelay: 500, periodDelay: 800},
-    {text: "Unfortunately, he taught his apprentice", audio: "8.webm", delay: 60, lineDelay: 300, commaDelay: 1200, periodDelay: 500},
+    {text: "Unfortunately, he taught his apprentice", audio: "8.webm", delay: 60, lineDelay: 300, commaDelay: 1200, periodDelay: 0},
     {text: "everything he knew...", delay: 50, lineDelay: 0, commaDelay: 1200, periodDelay: 500},
-    {text: "then his apprentice killed him in his sleep.", delay: 55, lineDelay: 300, commaDelay: 1200, periodDelay: 500},
-    {text: "Ironic... he could save others from death...", audio: "9.webm", delay: 55, lineDelay: 0, commaDelay: 500, periodDelay: 550},
-    {text: "but not himself.", delay: 53, lineDelay: 0, commaDelay: 500, periodDelay: 0}
+    {text: "then his apprentice killed him in his sleep.", delay: 55, lineDelay: 300, commaDelay: 0, periodDelay: 500},
+    {text: "Ironic...", audio: "9.webm", delay: 80, lineDelay: 0, commaDelay: 0, periodDelay: 525},
+    {text: "he could save others from death...", delay: 55, lineDelay: 0, commaDelay: 0, periodDelay: 550},
+    {text: "but not himself.", delay: 80, lineDelay: 0, commaDelay: 0, periodDelay: 0}
 ];
 var displayText = "";
 
